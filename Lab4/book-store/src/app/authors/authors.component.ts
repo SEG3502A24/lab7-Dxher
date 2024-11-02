@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { BooksService } from '../service/books.service';
+import { BooksService } from '../books/service/books.service';
 
 @Component({
   selector: 'app-authors',
   templateUrl: './authors.component.html',
+  standalone: true
 })
 export class AuthorsComponent {
   authorId!: number;
-  author: any;
+  author: any = null;
   errorMessage: string | null = null;
 
   constructor(private booksService: BooksService) {}
